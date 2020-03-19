@@ -38,12 +38,19 @@ const Menu = withRouter(({history}) => (
             <Button style={isActive(history, "/signin")}>Sign In
             </Button>
           </Link>
-        </span>)
+          <Link to={"/video/"}>
+            <Button style={isActive(history, "/video")}>Video</Button>
+          </Link>
+        </span>) // video endpoint above is for development persons
+                 // video will normally only be accessible for authenticated users
       }
       {
         auth.isAuthenticated() && (<span>
           <Link to={"/user/" + auth.isAuthenticated().user._id}>
             <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
+          </Link>
+          <Link to={"/video/"}>
+            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>Video</Button>
           </Link>
           <Button color="inherit" onClick={() => {
               auth.signout(() => history.push('/'))

@@ -18,6 +18,8 @@ class MainRouter extends Component {
     }
   }
 
+// public routes are only for development and testing purposes. Do not deploy. 
+
   render() {
     return (<div>
       <Menu/>
@@ -27,6 +29,14 @@ class MainRouter extends Component {
         <Route path="/signup" component={Signup}/>
         <Route path="/signin" component={Signin}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
+        <PrivateRoute path="/user/video/create" component={CreateVideo}/> 
+        <PrivateRoute path="/user/video/delete" component={DeleteVideo}/> 
+        <PrivateRoute path="/user/video/get" component={GetVideo}/> 
+
+        <Route path="/video/create" component={CreateVidoe}/>
+        <Route path="/video/delete" component={CreateVidoe}/>
+        <Route path="/video/get" component={CreateVidoe}/>
+
         <Route path="/user/:userId" component={Profile}/>
       </Switch>
     </div>)
