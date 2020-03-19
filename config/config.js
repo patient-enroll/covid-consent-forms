@@ -6,7 +6,7 @@ const config = {
     process.env.MONGO_HOST ||
     'mongodb://' + (process.env.IP || 'asmith:password@ds259241.mlab.com:59241/covidconsent') + ':' +
     (process.env.MONGO_PORT || '27017') +
-    '/mernproject'
+    '/covidconsent'
 }
 
 export default config
