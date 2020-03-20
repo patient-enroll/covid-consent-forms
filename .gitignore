@@ -1,6 +1,5 @@
 /.idea/
 /node_modules/
 /.babelrc/
-/dist/
 npm-debug.log
 *.iml
