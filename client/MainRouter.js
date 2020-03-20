@@ -8,6 +8,9 @@ import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
 import Menu from './core/Menu'
+import CreateVideo from './video/Create'
+import DeleteVideo from './video/Delete'
+import GetVideo from './video/Get'
 
 class MainRouter extends Component {
   // Removes the server-side injected CSS when React component mounts
@@ -29,18 +32,13 @@ class MainRouter extends Component {
         <Route path="/signup" component={Signup}/>
         <Route path="/signin" component={Signin}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
-        <PrivateRoute path="/user/video/create" component={CreateVideo}/> 
-        <PrivateRoute path="/user/video/delete" component={DeleteVideo}/> 
-        <PrivateRoute path="/user/video/get" component={GetVideo}/> 
-
-        <Route path="/video/create" component={CreateVidoe}/>
-        <Route path="/video/delete" component={CreateVidoe}/>
-        <Route path="/video/get" component={CreateVidoe}/>
-
+        <Route path="/video/create/:videoId" component={CreateVideo}/>
+        <Route path="/video/delete:videoId" component={DeleteVideo}/>
+        <Route path="/video/get:videoId" component={GetVideo}/>
         <Route path="/user/:userId" component={Profile}/>
       </Switch>
     </div>)
   }
 }
 
-export default MainRouter
+export default MainRouter;

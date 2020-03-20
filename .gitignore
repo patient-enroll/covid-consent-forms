@@ -1,6 +1,7 @@
 /.idea/
 /node_modules/
 /.babelrc/
-/dist/
 npm-debug.log
 *.iml
+.vscode/*
+!.vscode/launch.json
